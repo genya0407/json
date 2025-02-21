@@ -949,7 +949,7 @@ static inline VALUE ensure_valid_encoding(VALUE str)
                 case ENC_CODERANGE_VALID:
                     // For historical reason, we silently reinterpret binary strings as UTF-8 if it would work.
                     // TODO: Raise in 3.0.0
-                    rb_warn("JSON.generate: UTF-8 string passed as BINARY, this will raise an encoding error in json 3.0");
+                    rb_raise(rb_eRuntimeError, "My error!");
                     return utf8_string;
                     break;
             }
